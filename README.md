@@ -74,4 +74,4 @@ console.log(styles.locals.testClass); // _22890ashYFWamah25O4_Va - correct
 
 What the heck is going on? 
 
-Why all examples across the Internet seems to show that library works differently than it really does? 
+Why all examples across the Internet seems to show that library works differently than it really does? All the class names seems to be in `locals` property of export object. 

@@ -1,7 +1,9 @@
 {
   "name": "the-layouts-blog",
   "description": "Blog about layouts in web",
-  "scripts": {},
+  "scripts": {
+    "demo": "webpack-dev-server"
+  },
   "dependencies": {
     "webpack": "^4.26.1",
     "webpack-cli": "^3.2.1"

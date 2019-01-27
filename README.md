@@ -9,7 +9,18 @@ npm run demo
 
 ## What's wrong?
 
-Everywhere across entire internet I read that I can use css-modules in this way:
+Everywhere across the entire Internet I read that I can use css-modules in this way:
+
+```javascript
+import styles from "./style.css";
+// import { className } from "./style.css";
+
+element.innerHTML = '<div class="' + styles.className + '">';
+```
+
+This code is copied from official https://github.com/css-modules/css-modules
+
+## But it doesn't work! 
 
 Webpack config:
 
@@ -41,17 +52,6 @@ module.exports = {
 };
 ```
 
-```javascript
-import styles from "./style.css";
-// import { className } from "./style.css";
-
-element.innerHTML = '<div class="' + styles.className + '">';
-```
-
-This code is copied from official https://github.com/css-modules/css-modules
-
-## But it doesn't work! 
-
 CSS (`index.css`):
 
 ```css
@@ -67,8 +67,11 @@ JS: (`index.js`):
 import styles from "./index.css";
 
 console.log(styles.testClass); // undefined!!! WHY WHY WHY
+console.log(styles.locals.testClass); // _22890ashYFWamah25O4_Va - correct
+
 
 ```
 
+What the heck is going on? 
 
-What the heck is going on?
+Why all examples across the Internet seems to show that library works differently than it really does? 
